@@ -1,0 +1,33 @@
+%% TTR MACROS 
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{rotating}
+
+%records and record types
+\newcommand{\ttrrectype}[1]{\left[\begin{array}{l@{~:~}l}#1\end{array}\right]}
+\newcommand{\ttrrec}[1]{\left[\begin{array}{l@{~=~}l}#1\end{array}\right]}
+
+%RT functions: name of the RT domain variable, the domain RT and range RT
+\newcommand{\ttrlambda}[3]{
+\lambda #1:\left[ \begin{array}{l@{~:~}l}
+#2
+\end{array} \right] .
+\left[\begin{array}{l@{~:~}l}
+#3
+\end{array}\right]
+}
+
+%merge, min common super type operation and asymmetric merge
+\newcommand{\ttrmerge}{\text{ }\begin{sideways}$\gtrdot$\end{sideways}\text{ }}
+\newcommand{\ttrminsuper}{\text{ }\begin{sideways}$\lessdot$\end{sideways}\text{ }}
+\newcommand{\ttrasymm}{\text{ }\fbox{\begin{sideways}$\gtrdot$\end{sideways}}\text{ }}
+
+%subtype and supertype relations
+\def\subtype{\sqsubseteq}
+\def\supertype{\sqsupseteq}
+
+%small inline versions of rec types, records and functions as above
+\newcommand{\smttrrectype}[1]{[\!\!\begin{array}{l@{~\!:\!~}l}#1\end{array}\!\!]}
+\newcommand{\smttrrec}[1]{[\!\!\begin{array}{l@{~\!=\!~}l}#1\end{array}\!\!]}
+\newcommand{\smttrlambda}[3]{\lambda #1:[\!\!\begin{array}{l@{~\!:\!~}l}#2\end{array}\!\!].[\!\!\begin{array}{l@{~\!:\!~}l}#3\end{array}\!\!]}

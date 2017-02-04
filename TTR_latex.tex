@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+\usepackage{ttr}
+
+\title{Example uses of ttr.sty for Record Types, Records, Functions, Operations and Relations}
+
+\author{Julian Hough}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+\item Simple record types:\\
+$R_1:\ttrrectype{l_1 & T_1 \\ l_2& T_2 \\ l_3 & T_3(l_1)}$
+
+$R_2:\ttrrectype{l_1 & T_1 \\ l_2 & T_{2'}}$
+
+$R_3:\ttrrectype{}$
+
+\item Simple records:\\
+$S_1 = \ttrrec{l_1 & a \\ l_2& b \\ l_3 & c}$  
+
+$S_2 = \ttrrec{l_1 & a \\ l_2 & b'}$
+
+$S_3 = \ttrrec{}$
+
+\item Complex record types (with manifest fields, embedded RTs and paths):\\
+
+$\ttrrectype{r&\ttrrectype{x&e\\p_{=doctor(x)}&t\\p1_{=Chorlton(x)}&t}\\x_{=witness(r.x)}&e\\x1_{=spkr}&e\\ev_{=examine}&es\\p_{=subj(ev,x)}&t\\p1_{=obj(ev,x1)}&t}$
+\item Complex records:\\
+$\ttrrec{r&\ttrrec{x&e\\p_{=doctor(x)}&t\\p1_{=Chorlton(x)}&t}\\x_{=witness(r.x)}&e\\x1_{=spkr}&e\\ev_{=examine}&es\\p_{=subj(ev,x)}&t\\p1_{=obj(ev,x1)}&t}$
+
+\item RT functions:\\
+$\ttrlambda{r}{l_1 & a\\l_2 & b}{l_3 & a}$
+
+\item Merge, min common super type and asymmetric merge functions:\\
+$x \ttrmerge (y \ttrminsuper z) = (x \ttrmerge y) \ttrminsuper (x \ttrmerge z) $\\
+$x \ttrasymm y$
+
+\item Subtype and supertype relations:\\
+$x \subtype y$\\
+$x \supertype y$
+
+\item Small inline versions:\\
+You can put small record types inline as $\smttrrectype{l_1 & a}$, records as $\smttrrec{l_1 & a}$ and functions as $\smttrlambda{r}{l_1 & a}{l_2 & a}$.
+
+
+\end{itemize}
+
+
+\end{document}
