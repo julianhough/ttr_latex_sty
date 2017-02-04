@@ -1,5 +1,5 @@
 # ttr_latex_sty
-Latex resources for writing Type Theory with Record Type structures in latex.
+Resources for writing Type Theory with Record Type structures in latex.
 
 Includes: 
 * ttr.sty (a style file for TTR)
